@@ -9,7 +9,6 @@ COPY --from=repo iris-tutorial.opam .
 RUN opam install . --deps-only -y && \
     opam install -y rocq-iris-unstable
 
-# TODO: uncomment when vsrocq-language-server will start supporting ocaml 5.5
-# RUN opam install -y -w vsrocq-language-server
+RUN opam install -y vsrocq-language-server
 
 RUN echo "eval \$(opam env)" >> ~/.bashrc
